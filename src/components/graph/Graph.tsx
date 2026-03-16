@@ -190,8 +190,8 @@ export default function KnowledgeGraph() {
 
   if (loading)
     return (
-      <div className="flex flex-col items-center justify-center py-32 text-slate-500">
-        <div className="w-10 h-10 border-2 border-slate-700 border-t-cyan-500 rounded-full animate-spin"></div>
+      <div className="flex flex-col items-center justify-center py-32 text-[#666666]">
+        <div className="w-10 h-10 border-2 border-[#262626] border-t-white rounded-full animate-spin"></div>
         <p className="mt-4 text-sm">Loading knowledge graph&hellip;</p>
       </div>
     );
@@ -199,14 +199,14 @@ export default function KnowledgeGraph() {
   return (
     <div className="flex mt-14 justify-center items-center w-full mb-12 flex-col px-4">
       <div className="w-full max-w-6xl mb-3 flex gap-3 items-stretch flex-wrap">
-        <div className="flex-1 min-w-[200px] bg-slate-900 border border-slate-800 rounded-lg p-3 flex items-center gap-3">
-          <Search className="w-4 h-4 text-slate-500 flex-shrink-0" aria-hidden />
+        <div className="flex-1 min-w-[200px] bg-[#141414] border border-[#262626] rounded-lg p-3 flex items-center gap-3">
+          <Search className="w-4 h-4 text-[#666666] flex-shrink-0" aria-hidden />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Search nodes..."
-            className="flex-1 bg-transparent text-sm text-slate-200 placeholder-slate-600 focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-[#e5e5e5] placeholder-[#666666] focus:outline-none"
             aria-label="Search nodes in knowledge graph"
           />
           {searchTerm && (
@@ -216,7 +216,7 @@ export default function KnowledgeGraph() {
                 setHighlightNodes(new Set());
                 setHighlightLinksKeys(new Set());
               }}
-              className="text-slate-500 hover:text-slate-300 p-1 rounded hover:bg-slate-800 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-600"
+              className="text-[#666666] hover:text-white p-1 rounded hover:bg-[#1c1c1c] transition-colors focus:outline-none focus:ring-1 focus:ring-[#22d3ee]"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
@@ -224,26 +224,26 @@ export default function KnowledgeGraph() {
           )}
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-lg p-3 flex items-center gap-5">
+        <div className="bg-[#141414] border border-[#262626] rounded-lg p-3 flex items-center gap-5">
           {[
             { value: stats.totalNodes, label: "Nodes" },
             { value: stats.totalLinks, label: "Links" },
             { value: stats.avgConnections.toFixed(1), label: "Avg" },
           ].map((s, i) => (
             <div key={s.label} className="flex items-center gap-5">
-              {i > 0 && <div className="w-px h-6 bg-slate-800" />}
+              {i > 0 && <div className="w-px h-6 bg-[#262626]" />}
               <div className="text-center">
-                <div className="text-sm font-semibold text-cyan-400 tabular-nums">
+                <div className="text-sm font-semibold text-white tabular-nums">
                   {s.value}
                 </div>
-                <div className="text-[10px] text-slate-500">{s.label}</div>
+                <div className="text-[10px] text-[#666666]">{s.label}</div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="w-full max-w-6xl mb-3 bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5">
+      <div className="w-full max-w-6xl mb-3 bg-[#141414] border border-[#262626] rounded-lg px-4 py-2.5">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
           {[
             { key: "LEFT", action: "Rotate" },
@@ -252,36 +252,36 @@ export default function KnowledgeGraph() {
             { key: "CLICK", action: "Select" },
           ].map((ctrl) => (
             <div key={ctrl.key} className="flex items-center gap-1.5">
-              <kbd className="bg-slate-800 text-cyan-500 px-1.5 py-0.5 rounded text-[10px] font-mono font-medium border border-slate-700">
+              <kbd className="bg-[#1c1c1c] text-white px-1.5 py-0.5 rounded text-[10px] font-mono font-medium border border-[#333]">
                 {ctrl.key}
               </kbd>
-              <span className="text-slate-500">{ctrl.action}</span>
+              <span className="text-[#666666]">{ctrl.action}</span>
             </div>
           ))}
         </div>
       </div>
 
       <div className="w-full max-w-6xl flex gap-3 flex-col lg:flex-row">
-        <div className="relative flex-1 min-h-[400px] lg:min-h-[100vh] h-[70vh] lg:h-[100vh] bg-slate-950 border border-slate-800 rounded-lg overflow-hidden flex items-center justify-center">
+        <div className="relative flex-1 min-h-[400px] lg:min-h-[100vh] h-[70vh] lg:h-[100vh] bg-[#0a0a0a] border border-[#262626] rounded-lg overflow-hidden flex items-center justify-center">
           <ForceGraph3D
             graphData={data}
             nodeAutoColorBy="group"
             nodeRelSize={6}
-            backgroundColor="#020617"
+            backgroundColor="#0a0a0a"
             linkColor={(link: { source?: unknown; target?: unknown }) => {
               const { source, target } = getLinkSourceTarget(link);
 
               if (highlightLinksKeys.size > 0) {
                 const isHighlighted = isLinkHighlighted(link);
                 return isHighlighted
-                  ? "rgba(6, 182, 212, 0.85)"
-                  : "rgba(6, 182, 212, 0.08)";
+                  ? "rgba(34, 211, 238, 0.85)"
+                  : "rgba(255, 255, 255, 0.04)";
               }
 
               if (hoveredNode && (source === hoveredNode || target === hoveredNode)) {
-                return "rgba(6, 182, 212, 0.85)";
+                return "rgba(34, 211, 238, 0.85)";
               }
-              return "rgba(6, 182, 212, 0.18)";
+              return "rgba(255, 255, 255, 0.08)";
             }}
             linkWidth={(link: { source?: unknown; target?: unknown }) => {
               if (highlightLinksKeys.size > 0 && isLinkHighlighted(link)) {
@@ -295,19 +295,19 @@ export default function KnowledgeGraph() {
             }}
             nodeLabel={(node: { id?: string | number; group?: number }) => `
               <div style="
-                background: #0f172a;
-                color: #e2e8f0;
+                background: #141414;
+                color: #e5e5e5;
                 padding: 8px 12px;
                 border-radius: 6px;
                 font-family: system-ui, -apple-system, sans-serif;
                 font-size: 12px;
                 font-weight: 500;
-                border: 1px solid #334155;
+                border: 1px solid #404040;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
                 max-width: 220px;
                 word-wrap: break-word;
               ">
-                <div style="margin-bottom: 2px; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: ${node.group === 1 ? '#06b6d4' : '#2dd4bf'};">
+                <div style="margin-bottom: 2px; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: #a3a3a3;">
                   ${node.group === 1 ? "Subject" : "Object"}
                 </div>
                 ${node.id}
@@ -331,15 +331,15 @@ export default function KnowledgeGraph() {
               const group = node.group || 1;
 
               if (isHighlighted) {
-                return group === 1 ? "#22d3ee" : "#5eead4";
+                return group === 1 ? "#22d3ee" : "#facc15";
               }
               if (isHovered) {
-                return "#67e8f9";
+                return "#ffffff";
               }
               if (highlightNodes.size > 0) {
-                return "#334155";
+                return "#333333";
               }
-              return group === 1 ? "#06b6d4" : "#2dd4bf";
+              return group === 1 ? "#e5e5e5" : "#a3a3a3";
             }}
             nodeVal={(node: { id?: string | number }) => {
               const nodeId = String(node.id ?? "");

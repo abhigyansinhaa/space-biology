@@ -46,7 +46,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative bg-slate-950 py-28 px-6 md:px-20 border-t border-slate-800/50"
+      className="relative bg-[#0a0a0a] py-28 px-6 md:px-20 border-t border-[#262626]"
     >
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -56,7 +56,7 @@ export const AboutSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-4">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#a3a3a3] mb-4">
             Why SpaceBio Explorer?
           </p>
 
@@ -64,7 +64,7 @@ export const AboutSection: React.FC = () => {
             Built for NASA Space Apps
           </h2>
 
-          <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-[#a3a3a3] leading-relaxed max-w-2xl mx-auto">
             This project leverages machine learning to analyze over{" "}
             <span className="text-white font-semibold">600 research papers</span>{" "}
             on space biology, empowering researchers and enthusiasts to discover
@@ -80,9 +80,9 @@ export const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group p-7 bg-slate-900 border border-slate-800 hover:border-cyan-800/40 rounded-xl transition-all duration-300 hover:bg-slate-900/80"
+              className="group p-7 bg-[#141414] border border-[#262626] hover:border-[#404040] rounded-xl transition-all duration-300"
             >
-              <div className="inline-flex p-3 bg-cyan-950/40 border border-cyan-900/30 rounded-lg mb-5 text-cyan-400 group-hover:bg-cyan-950/60 transition-colors">
+              <div className="inline-flex p-3 bg-[#1c1c1c] border border-[#333] rounded-lg mb-5 text-white group-hover:text-[#22d3ee] transition-colors">
                 {feature.icon}
               </div>
 
@@ -90,7 +90,7 @@ export const AboutSection: React.FC = () => {
                 {feature.title}
               </h3>
 
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-sm text-[#a3a3a3] leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -102,9 +102,9 @@ export const AboutSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 p-8 bg-slate-900 border border-slate-800 rounded-xl"
+          className="mt-16 p-8 bg-[#141414] border border-[#262626] rounded-xl"
         >
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-6 text-center">
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-[#666666] mb-6 text-center">
             Powered By
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -120,12 +120,12 @@ export const AboutSection: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="p-4 bg-slate-800/60 border border-slate-700/50 hover:border-cyan-800/30 rounded-lg text-center transition-colors"
+                className="p-4 bg-[#1c1c1c] border border-[#262626] hover:border-[#facc15]/30 rounded-lg text-center transition-colors"
               >
-                <div className="text-base font-semibold text-slate-200">
+                <div className="text-base font-semibold text-white">
                   {tech.name}
                 </div>
-                <div className="text-xs text-slate-500 mt-1">
+                <div className="text-xs text-[#666666] mt-1">
                   {tech.desc}
                 </div>
               </motion.div>

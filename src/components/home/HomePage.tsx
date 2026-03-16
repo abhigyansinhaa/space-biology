@@ -8,10 +8,10 @@ import { ArrowRight, Terminal } from "lucide-react";
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="bg-slate-950 text-slate-200 min-h-screen">
+    <div className="bg-[#0a0a0a] text-[#e5e5e5] min-h-screen">
       <HeroSection />
 
-      <section className="relative w-full bg-slate-950 py-28 border-t border-slate-800/50">
+      <section className="relative w-full bg-[#0a0a0a] py-28 border-t border-[#262626]">
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#a3a3a3] mb-4">
               Interactive Data
             </p>
 
@@ -27,11 +27,11 @@ export const HomePage: React.FC = () => {
               Explore the Knowledge Graph
             </h2>
 
-            <p className="text-base md:text-lg text-slate-400 mb-4 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-[#a3a3a3] mb-4 max-w-2xl mx-auto leading-relaxed">
               Navigate 74,000+ interconnected relationships from space biology
               research through a 3D force-directed visualization.
             </p>
-            <p className="text-sm text-slate-500 mb-10">
+            <p className="text-sm text-[#666666] mb-10">
               Powered by react-force-graph with real-time interaction
             </p>
 
@@ -42,7 +42,7 @@ export const HomePage: React.FC = () => {
               >
                 <Link
                   href="/explore"
-                  className="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white text-base font-semibold rounded-lg flex items-center gap-2.5 transition-colors shadow-lg shadow-cyan-500/20"
+                  className="px-8 py-4 bg-white text-black text-base font-semibold rounded-lg flex items-center gap-2.5 transition-all duration-200 hover:bg-[#22d3ee] hover:text-black shadow-lg hover:shadow-[#22d3ee]/20"
                 >
                   Launch Knowledge Graph
                   <ArrowRight className="w-5 h-5" aria-hidden />
@@ -55,7 +55,7 @@ export const HomePage: React.FC = () => {
               >
                 <Link
                   href="/search"
-                  className="px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 text-slate-200 text-base font-semibold rounded-lg flex items-center gap-2.5 transition-colors"
+                  className="px-8 py-4 bg-transparent border border-white/30 text-white text-base font-semibold rounded-lg flex items-center gap-2.5 transition-all duration-200 hover:border-[#facc15] hover:text-[#facc15]"
                 >
                   <Terminal className="w-5 h-5" aria-hidden />
                   Query Database
@@ -70,10 +70,10 @@ export const HomePage: React.FC = () => {
                 { value: "Real-time", label: "Dynamic Force Layout" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-xl md:text-2xl font-bold text-cyan-400 tabular-nums mb-1">
+                  <div className="text-xl md:text-2xl font-bold text-white tabular-nums mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-slate-500 font-medium">
+                  <div className="text-xs text-[#666666] font-medium">
                     {stat.label}
                   </div>
                 </div>

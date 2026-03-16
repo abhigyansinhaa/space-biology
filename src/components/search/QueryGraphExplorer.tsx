@@ -185,20 +185,20 @@ export default function QueryGraphExplorer() {
 
   if (loading)
     return (
-      <div className="flex flex-col items-center justify-center py-32 text-slate-500">
-        <div className="w-10 h-10 border-2 border-slate-700 border-t-cyan-500 rounded-full animate-spin"></div>
+      <div className="flex flex-col items-center justify-center py-32 text-[#666666]">
+        <div className="w-10 h-10 border-2 border-[#262626] border-t-white rounded-full animate-spin"></div>
         <p className="mt-4 text-sm">Loading dataset&hellip;</p>
       </div>
     );
 
   return (
     <div className="w-full max-w-5xl mx-auto mt-14 px-4">
-      <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden">
-        <div className="border-b border-slate-800 px-6 py-4">
-          <h2 className="text-base font-semibold text-slate-200">
+      <div className="bg-[#141414] border border-[#262626] rounded-lg overflow-hidden">
+        <div className="border-b border-[#262626] px-6 py-4">
+          <h2 className="text-base font-semibold text-white">
             Cypher Query Explorer
           </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-[#666666] mt-0.5">
             Query the knowledge graph using Cypher-like syntax
           </p>
         </div>
@@ -214,7 +214,7 @@ export default function QueryGraphExplorer() {
               <button
                 key={example.label}
                 onClick={() => setQuery(example.query)}
-                className="text-xs px-2.5 py-1 bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-cyan-800/50 rounded-md text-slate-400 hover:text-slate-300 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-600"
+                className="text-xs px-2.5 py-1 bg-[#1c1c1c] hover:bg-[#262626] border border-[#333] hover:border-white/30 rounded-md text-[#a3a3a3] hover:text-white transition-colors focus:outline-none focus:ring-1 focus:ring-[#22d3ee]"
               >
                 {example.label}
               </button>
@@ -230,23 +230,23 @@ export default function QueryGraphExplorer() {
               }
             }}
             placeholder='MATCH (s)-[p]->(o) WHERE s = "your-query-here"'
-            className="w-full bg-slate-950 border border-slate-800 text-slate-200 p-4 rounded-md font-mono text-sm focus:outline-none focus:ring-1 focus:ring-cyan-600 focus:border-cyan-800 placeholder-slate-600 transition-colors resize-none"
+            className="w-full bg-[#0a0a0a] border border-[#262626] text-[#e5e5e5] p-4 rounded-md font-mono text-sm focus:outline-none focus:ring-1 focus:ring-[#22d3ee] focus:border-[#404040] placeholder-[#666666] transition-colors resize-none"
             rows={3}
             aria-label="Cypher query input"
           />
 
           <div className="flex items-center justify-between mt-3 flex-wrap gap-2">
-            <div className="flex flex-wrap gap-2 text-[11px] text-slate-500 font-mono">
+            <div className="flex flex-wrap gap-2 text-[11px] text-[#666666] font-mono">
               <span>
-                <span className="text-cyan-600">s</span>=subject
+                <span className="text-[#a3a3a3]">s</span>=subject
               </span>
               <span>
-                <span className="text-cyan-600">p</span>=predicate
+                <span className="text-[#a3a3a3]">p</span>=predicate
               </span>
               <span>
-                <span className="text-cyan-600">o</span>=object
+                <span className="text-[#a3a3a3]">o</span>=object
               </span>
-              <span className="text-slate-600 ml-2">
+              <span className="text-[#404040] ml-2">
                 Ctrl+Enter to run
               </span>
             </div>
@@ -259,7 +259,7 @@ export default function QueryGraphExplorer() {
                   setGraphData({ nodes: [], links: [] });
                   setError(null);
                 }}
-                className="px-3 py-1.5 text-xs bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-md text-slate-400 hover:text-slate-300 transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-1 focus:ring-cyan-600"
+                className="px-3 py-1.5 text-xs bg-[#1c1c1c] hover:bg-[#262626] border border-[#333] rounded-md text-[#a3a3a3] hover:text-white transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-1 focus:ring-[#22d3ee]"
               >
                 <Trash2 className="w-3 h-3" />
                 Clear
@@ -268,7 +268,7 @@ export default function QueryGraphExplorer() {
               <button
                 onClick={runQuery}
                 disabled={!query.trim()}
-                className="px-4 py-1.5 text-xs bg-cyan-600 hover:bg-cyan-500 rounded-md text-white font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 focus:outline-none focus:ring-1 focus:ring-cyan-400"
+                className="px-4 py-1.5 text-xs bg-white hover:bg-[#22d3ee] rounded-md text-black font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 focus:outline-none focus:ring-1 focus:ring-[#22d3ee]"
               >
                 <Play className="w-3 h-3" />
                 Execute
@@ -289,13 +289,13 @@ export default function QueryGraphExplorer() {
       </div>
 
       <div className="mt-6">
-        <div className="bg-slate-900 rounded-lg border border-slate-800">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+        <div className="bg-[#141414] rounded-lg border border-[#262626]">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[#262626]">
             <div className="flex items-center gap-2">
-              <Database className="w-4 h-4 text-slate-500" aria-hidden />
-              <h3 className="text-sm font-semibold text-slate-200">Results</h3>
+              <Database className="w-4 h-4 text-[#666666]" aria-hidden />
+              <h3 className="text-sm font-semibold text-white">Results</h3>
             </div>
-            <span className="text-xs text-slate-500 tabular-nums">
+            <span className="text-xs text-[#666666] tabular-nums">
               {results.length} rows
             </span>
           </div>
@@ -303,8 +303,8 @@ export default function QueryGraphExplorer() {
           <div className="p-6">
             {results.length === 0 ? (
               <div className="text-center py-10">
-                <p className="text-sm text-slate-500">No results</p>
-                <p className="text-xs text-slate-600 mt-1">
+                <p className="text-sm text-[#666666]">No results</p>
+                <p className="text-xs text-[#404040] mt-1">
                   Run a query to see results here
                 </p>
               </div>
@@ -313,32 +313,32 @@ export default function QueryGraphExplorer() {
                 {results.map((t, i) => (
                   <div
                     key={`${t.subject}-${t.predicate}-${t.object}-${i}`}
-                    className="bg-slate-800/60 border border-slate-700/50 hover:border-slate-600 rounded-md p-3 transition-colors"
+                    className="bg-[#1c1c1c] border border-[#262626] hover:border-[#404040] rounded-md p-3 transition-colors"
                   >
                     <div className="flex items-start gap-3 text-xs">
-                      <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0 mt-0.5" aria-hidden />
+                      <ChevronRight className="w-3.5 h-3.5 text-[#404040] flex-shrink-0 mt-0.5" aria-hidden />
                       <div className="flex-1 space-y-1 min-w-0">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-[10px] font-medium text-cyan-600 uppercase tracking-wider w-14 flex-shrink-0">
+                          <span className="text-[10px] font-medium text-[#a3a3a3] uppercase tracking-wider w-14 flex-shrink-0">
                             Subject
                           </span>
-                          <span className="text-slate-300 truncate">
+                          <span className="text-[#e5e5e5] truncate">
                             {t.subject}
                           </span>
                         </div>
                         <div className="flex items-baseline gap-2">
-                          <span className="text-[10px] font-medium text-teal-600 uppercase tracking-wider w-14 flex-shrink-0">
+                          <span className="text-[10px] font-medium text-[#a3a3a3] uppercase tracking-wider w-14 flex-shrink-0">
                             Predicate
                           </span>
-                          <span className="text-slate-400 italic truncate">
+                          <span className="text-[#a3a3a3] italic truncate">
                             {t.predicate}
                           </span>
                         </div>
                         <div className="flex items-baseline gap-2">
-                          <span className="text-[10px] font-medium text-cyan-600 uppercase tracking-wider w-14 flex-shrink-0">
+                          <span className="text-[10px] font-medium text-[#a3a3a3] uppercase tracking-wider w-14 flex-shrink-0">
                             Object
                           </span>
-                          <span className="text-slate-300 truncate">
+                          <span className="text-[#e5e5e5] truncate">
                             {t.object}
                           </span>
                         </div>
@@ -354,7 +354,7 @@ export default function QueryGraphExplorer() {
 
       {graphData.nodes.length > 0 && (
         <div className="mt-8 mb-12">
-          <div className="mb-3 bg-slate-900 border border-slate-800 rounded-lg px-4 py-2.5">
+          <div className="mb-3 bg-[#141414] border border-[#262626] rounded-lg px-4 py-2.5">
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
               {[
                 { key: "LEFT", action: "Rotate" },
@@ -363,39 +363,39 @@ export default function QueryGraphExplorer() {
                 { key: "CLICK", action: "Select" },
               ].map((ctrl) => (
                 <div key={ctrl.key} className="flex items-center gap-1.5">
-                  <kbd className="bg-slate-800 text-cyan-500 px-1.5 py-0.5 rounded text-[10px] font-mono font-medium border border-slate-700">
+                  <kbd className="bg-[#1c1c1c] text-white px-1.5 py-0.5 rounded text-[10px] font-mono font-medium border border-[#333]">
                     {ctrl.key}
                   </kbd>
-                  <span className="text-slate-500">{ctrl.action}</span>
+                  <span className="text-[#666666]">{ctrl.action}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="flex gap-3 flex-col lg:flex-row">
-            <div className="flex-1 min-h-[400px] h-[600px] bg-slate-950 border border-slate-800 rounded-lg overflow-hidden flex items-center justify-center">
+            <div className="flex-1 min-h-[400px] h-[600px] bg-[#0a0a0a] border border-[#262626] rounded-lg overflow-hidden flex items-center justify-center">
               <ForceGraph3D
                 graphData={graphData}
                 nodeAutoColorBy="group"
                 nodeRelSize={6}
-                backgroundColor="#020617"
+                backgroundColor="#0a0a0a"
                 linkColor={(link: { source?: unknown; target?: unknown }) => {
                   const { source, target } = getLinkSourceTarget(link);
 
                   if (highlightLinksKeys.size > 0) {
                     const isHighlighted = isLinkHighlighted(link);
                     return isHighlighted
-                      ? "rgba(6, 182, 212, 0.85)"
-                      : "rgba(6, 182, 212, 0.08)";
+                      ? "rgba(34, 211, 238, 0.85)"
+                      : "rgba(255, 255, 255, 0.04)";
                   }
 
                   if (
                     hoveredNode &&
                     (source === hoveredNode || target === hoveredNode)
                   ) {
-                    return "rgba(6, 182, 212, 0.85)";
+                    return "rgba(34, 211, 238, 0.85)";
                   }
-                  return "rgba(6, 182, 212, 0.18)";
+                  return "rgba(255, 255, 255, 0.08)";
                 }}
                 linkWidth={(link: { source?: unknown; target?: unknown }) => {
                   if (highlightLinksKeys.size > 0 && isLinkHighlighted(link)) {
@@ -412,19 +412,19 @@ export default function QueryGraphExplorer() {
                 }}
                 nodeLabel={(node: { id?: string | number; group?: number }) => `
                   <div style="
-                    background: #0f172a;
-                    color: #e2e8f0;
+                    background: #141414;
+                    color: #e5e5e5;
                     padding: 8px 12px;
                     border-radius: 6px;
                     font-family: system-ui, -apple-system, sans-serif;
                     font-size: 12px;
                     font-weight: 500;
-                    border: 1px solid #334155;
+                    border: 1px solid #404040;
                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
                     max-width: 220px;
                     word-wrap: break-word;
                   ">
-                    <div style="margin-bottom: 2px; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: ${node.group === 1 ? '#06b6d4' : '#2dd4bf'};">
+                    <div style="margin-bottom: 2px; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: #a3a3a3;">
                       ${node.group === 1 ? "Subject" : "Object"}
                     </div>
                     ${node.id}
@@ -448,15 +448,15 @@ export default function QueryGraphExplorer() {
                   const group = node.group || 1;
 
                   if (isHighlighted) {
-                    return group === 1 ? "#22d3ee" : "#5eead4";
+                    return group === 1 ? "#22d3ee" : "#facc15";
                   }
                   if (isHovered) {
-                    return "#67e8f9";
+                    return "#ffffff";
                   }
                   if (highlightNodes.size > 0) {
-                    return "#334155";
+                    return "#333333";
                   }
-                  return group === 1 ? "#06b6d4" : "#2dd4bf";
+                  return group === 1 ? "#e5e5e5" : "#a3a3a3";
                 }}
                 nodeVal={(node: { id?: string | number }) => {
                   const nodeId = String(node.id ?? "");

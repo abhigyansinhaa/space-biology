@@ -1,21 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #e2e8f0;
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
 
-  --lab-base: #020617;
-  --lab-surface: #0f172a;
-  --lab-elevated: #1e293b;
-  --lab-border: #334155;
+  --surface: #141414;
+  --elevated: #1c1c1c;
+  --border: #262626;
+  --border-strong: #404040;
 
-  --lab-accent: #06b6d4;
-  --lab-accent-bright: #22d3ee;
-  --lab-accent-dim: #0e7490;
-  --lab-accent-deep: #164e63;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #666666;
 
-  --lab-teal: #2dd4bf;
-  --lab-amber: #f59e0b;
+  --accent-cyan: #22d3ee;
+  --accent-yellow: #facc15;
 }
 
 @theme inline {
@@ -31,7 +30,7 @@ body {
 }
 
 *:focus-visible {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid var(--accent-cyan);
   outline-offset: 2px;
 }
 
@@ -39,12 +38,19 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid var(--accent-cyan);
   outline-offset: 2px;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #22d3ee, #06b6d4, #2dd4bf);
+  background: linear-gradient(135deg, #ffffff, #a3a3a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #22d3ee, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -55,17 +61,17 @@ textarea:focus-visible {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #141414;
   border-radius: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #404040;
   border-radius: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #525252;
 }
 
 @keyframes fadeIn {

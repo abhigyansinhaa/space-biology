@@ -59,7 +59,7 @@ export default function RootLayout({
       >
         <a
           href="#main-content"
-          className="fixed -top-20 left-4 z-[100] px-4 py-2 bg-cyan-600 text-white text-sm font-medium rounded-md transition-[top] duration-200 focus:top-4 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+          className="fixed -top-20 left-4 z-[100] px-4 py-2 bg-neutral-800 text-white text-sm font-medium rounded-md transition-[top] duration-200 focus:top-4 focus:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
         >
           Skip to main content
         </a>
